@@ -77,16 +77,13 @@ print(list(my_set))
 # 7. Даны две строки. Создать список в который поместить те символы, которые есть в обеих строках,
 # но в каждой только по одному разу.
 
-my_str = "qweertyyuuhh"
-my_str2 = "sdfsdfsdfsdfm"
+my_str = "qwe"
+my_str2 = "qaz"
 new_list = []
-for i in my_str:
+for i in my_str and my_str2:
     if my_str.count(i) == 1:
         new_list.append(i)
-for x in my_str2:
-    if my_str2.count(x) == 1:
-        new_list.append(x)
-print(new_list)
+        print(set(new_list))
 
 ########################################################################################################################
 
