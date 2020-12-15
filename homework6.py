@@ -78,12 +78,14 @@ print(list(my_set))
 # но в каждой только по одному разу.
 
 my_str = "qwe"
-my_str2 = "qaz"
+my_str2 = "qaрprrez"
 new_list = []
 for i in my_str and my_str2:
     if my_str.count(i) == 1:
         new_list.append(i)
-        print(set(new_list))
+        # print(set(new_list))
+mylist = set(new_list)
+print(mylist)
 
 ########################################################################################################################
 
