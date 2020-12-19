@@ -119,6 +119,17 @@ print(mysubstr)
 # В переменную sub_str поместить НАИБОЛЬШУЮ часть строки между этими символами.
 # my_str = "My long string", l_limit = "o", r_limit = "g" -> sub_str = "ng strin".
 
+my_str = "My long string"
+l_limit = "o"
+r_limit = "g"
+
+_ = list(my_str)
+list_rl = _.copy()
+list_rl.reverse()
+indexofr_imit = len(list_rl) - list_rl.index(r_limit) - 1
+
+splitstr = "".join(_[_.index(l_limit) + 1:indexofr_imit])
+print(splitstr)
 
 # 10. Дан список чисел. Определите, сколько в этом списке элементов,
 # которые больше суммы двух своих соседей (слева и справа), и НАПЕЧАТАЙТЕ КОЛИЧЕСТВО таких элементов.
