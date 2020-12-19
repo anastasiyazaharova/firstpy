@@ -81,10 +81,10 @@ my_str = "qwe"
 my_str2 = "qaрprreeeeeez"
 new_list = []
 for i in my_str and my_str2:
-    if my_str.count(i) == 1:
+    if my_str.count(i) == 1 and my_str2.count(i) == 1:
         new_list.append(i)
-        # print(set(new_list))
-mylist = set(new_list)
+
+mylist =(new_list)
 print(mylist)
 #
 # ########################################################################################################################
