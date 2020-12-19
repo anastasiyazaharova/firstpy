@@ -14,18 +14,6 @@ import random
 # и их координаты - кортежи (значения), созданные случайным образом с помощью модуля random в диапазоне от -10 до 10 по каждой оси.
 
 
-# def create_random_point():
-#     point = (random.randint(-10, 10),
-#              random.randint(-10, 10),
-#              random.randint(-10, 10))
-#     return point
-# def create_line_segment():
-#     line_segment = {"A": create_random_point(),
-#                     "B": create_random_point(),
-#                     "C": create_random_point()}
-#     return line_segment
-# def print_line_segment(line_segment):
-
 # triangle = {"A": (), "B": (), "C": ()}
 # for key in triangle:
 #     triangle[key] = tuple([random.randint(-100, 100) for i in range(3)])
