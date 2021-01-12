@@ -5,6 +5,7 @@ import random
 import string
 import json
 import csv
+
 # Функция 1. Создает данные для записи в файл txt.
 # Функция генерирует и возвращает строку случайной длинны (не менее 100 но не более 1000 символов).
 # В строке должны присутствовать большие и маленькие буквы английского алфавита, цифры, пробелы,
@@ -40,9 +41,6 @@ def text_create(countOfwords):
         data.append(random.choice([random_word(random.randint(0, 10)) + " ", random_int(random.randint(1,10)) + " ", "\n" + random_word(random.randint(0, 10)) + " ", replace_last_letter(random_word(random.randint(0, 10))) + " "]))
     data2 = "".join(data)
     return data2
-
-print(text_create(100))
-
 
 # Функция 2. Создает данные для записи в файл json.
 # Создает и возвращает словарь со случайным количеством ключей (не менее 5 но не более 20 ключей).
@@ -82,33 +80,27 @@ def write_txt(path):
     with open(path, 'w') as txtfile:
         txtfile.write(text_create(100))
 
-write_txt('hom9.txt')
 
 def write_json(path):
     with open(path, 'w') as jsonfile:
         json.dump(create_dict(random.randint(5, 20)), jsonfile)
 
 
-write_json('hom9.json')
-
 def write_csv(path):
     with open(path, 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         for i in create_list(random.randint(3, 10), random.randint(3, 10)):
             writer.writerow(i)
-            print(i)
 
-write_csv('hom9.csv')
+def write_file(file_name):
+    ext = file_name.split(".")[-1]
+    if ext == "txt":
+        write_txt(file_name)
+    elif ext == "json":
+        write_json(file_name)
+    elif ext == "csv":
+        write_csv(file_name)
+    else:
+        print("Unsupported file format")
 
-# def generate_and_write_file:
-#     ext = filename.split(".")[-1]
-#     if ext == 'txt':
-#         result = read_txt(filename)
-#     elif ext == "json":
-#         result = read_json(filename)
-#     elif ext == "csv":
-#         result = read_csv(filename)
-#     else:
-#         print = ('Unsupported file format')
-#         result = ''
-#     return result
+# write_file('')
