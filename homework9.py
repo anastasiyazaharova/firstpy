@@ -92,7 +92,7 @@ def write_csv(path):
         for i in create_list(random.randint(3, 10), random.randint(3, 10)):
             writer.writerow(i)
 
-def write_file(file_name):
+def generate_and_write_file(file_name):
     ext = file_name.split(".")[-1]
     if ext == "txt":
         write_txt(file_name)
@@ -103,4 +103,4 @@ def write_file(file_name):
     else:
         print("Unsupported file format")
 
-# write_file('')
+# generate_and_write_file('')
