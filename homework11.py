@@ -19,7 +19,11 @@ data = read_data_json("data.json")
 
 
 def key_sorted_by_name(obj_dict):
-    return obj_dict["name"]
+    if len(obj_dict["name"].split(' ')) == 1:
+        return obj_dict["name"].split(' ')[0]
+    else:
+        return obj_dict["name"].split(' ')[-1]
+
 
 
 new_sorted_data = sorted(data, key=key_sorted_by_name)
