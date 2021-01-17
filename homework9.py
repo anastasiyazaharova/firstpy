@@ -103,4 +103,4 @@ def generate_and_write_file(file_name):
     else:
         print("Unsupported file format")
 
-# generate_and_write_file('')
+generate_and_write_file('1.txt')
