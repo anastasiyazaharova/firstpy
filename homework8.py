@@ -1,20 +1,20 @@
-# 1. Считать данные из файла domains.txt
+# 1. Считать данные из файла domains.txt.txt
 # Названия интернет доменов поместить в список (названия сохранить без точки).
 
 import random
 import string
 
-with open('domains', "r") as txt_file:
+with open('domains.txt', "r") as txt_file:
     domains = []
     for line in txt_file.readlines():
         domains.append(line.strip()[1:])
 print(domains)
 
-# 2. Считать данные из файла names.txt и поместить в список только фамилии из файла.
+# 2. Считать данные из файла names.txt.txt и поместить в список только фамилии из файла.
 # Каждая строка файла содержит номер, фамилию, страну, некоторое число (таблица взята с википедии).
 # Фамилия находится всегда на одной и той же позиции в строке.
 
-with open('names', "r") as txt_file:
+with open('names.txt', "r") as txt_file:
     names = []
     for line in txt_file.readlines():
         names.append(line.split()[1])
