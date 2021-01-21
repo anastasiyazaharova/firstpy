@@ -63,30 +63,29 @@ class EmailGenerator:
         return f"len domains.txt = {len(self.get_domains())}, len names.txt = {len(self.get_names())}"
 
     def get_domains(self):
-        domain_list = []
-        with open(self.path_file_d, "r") as domains:
-            for strings in domains.readlines():
-                domain_list.append(strings[1:-1])
-        return domain_list
+        domains = []
+        with open(self.path_file_d, "r") as txt_file:
+            for line in txt_file.readlines():
+                domains.append(line.strip()[1:])
+        return domains
 
     def get_names(self):
-        name_list = []
-        with open(self.path_file_n, "r") as names:
-            for strings1 in names.readlines():
-                name_list.append(strings1.split()[1])
-        return name_list
+        names = []
+        with open(self.path_file_n, "r") as txt_file:
+            for line in txt_file.readlines():
+                names.append(line.split()[1])
+        return names
 
 # 1) максимальное значение числа после имени от 100 до ...
 # 2) максимальное значение домена 2 уровня от 5 до ....
 
-    def generate_email(self, maxint=999, maxdom=7):
-        part2 = random.randint(100, maxint)
-        part1 = random.choice(self.get_names())
-        part4 = random.choice(self.get_domains())
-        part3 = ''.join(random.choice(string.ascii_lowercase) for _ in range(random.randint(5, maxdom)))
-        return part1.lower() + "." + str(part2) + "@" + part3 + "." + part4
-
+    def generate_email(self):
+        surname = random.choice(self.get_names())
+        result_numbers = random.randint(100, 999)
+        result_str = ''.join(random.choice(string.ascii_lowercase) for i in range(random.randint(5, 7)))
+        domain = random.choice(self.get_domains())
+        return surname.lower() + "." + str(result_numbers) + "@" + result_str + "." + domain
 
 test = EmailGenerator("domains.txt", "names.txt")
 
-print(test.names)
+print(test.generate_email())
